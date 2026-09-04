@@ -1,12 +1,12 @@
 # 🛠️ Workspace Setup (Orquestador de Entorno de Desarrollo)
 
-Este repositorio contiene la configuración base para el contenedor de desarrollo (**Dev Container**) y el espacio de trabajo multi-raíz de VS Code (**Multi-Root Workspace**). 
+Este repositorio contiene la configuración base para el contenedor de desarrollo (**Dev Container**) y el espacio de trabajo multi-raíz de VS Code (**Multi-Root Workspace**).
 
 Su propósito es orquestar la inicialización del entorno, clonando los repositorios de las aplicaciones y servicios correspondientes (como `app` y futuros servicios).
 
 ---
 
-## 📂 Arquitectura de Repositorios
+## Arquitectura de Repositorios
 
 - **`setup` (este repositorio)**:
   - Configuración del Dev Container (`.devcontainer/devcontainer.json`).
@@ -32,6 +32,7 @@ bash setup.sh
 ### Clonación de Repositorios Adicionales (Futuros)
 
 Para agregar nuevos repositorios al espacio de trabajo:
+
 1. Añade la orden de clonación correspondiente dentro de [`setup.sh`](./setup.sh).
 2. Añade la nueva carpeta a la lista de ignorados en [`.gitignore`](./.gitignore).
 3. Añade la carpeta a `workspace.code-workspace` para visualizarla en VS Code.
@@ -42,9 +43,9 @@ Para agregar nuevos repositorios al espacio de trabajo:
 
 Desde la raíz puedes ejecutar comandos delegados a la aplicación:
 
-| Comando | Acción |
-|---|---|
-| `npm run setup` | Clona y configura los repositorios (`app`, etc.) |
-| `npm run dev` | Inicia el servidor de desarrollo de `app` en el puerto 3000 |
-| `npm run build` | Compila la aplicación para producción |
-| `npm run start` | Inicia el servidor en modo producción |
+| Comando         | Acción                                                      |
+| --------------- | ----------------------------------------------------------- |
+| `npm run setup` | Clona y configura los repositorios (`app`, etc.)            |
+| `npm run dev`   | Inicia el servidor de desarrollo de `app` en el puerto 3000 |
+| `npm run build` | Compila la aplicación para producción                       |
+| `npm run start` | Inicia el servidor en modo producción                       |

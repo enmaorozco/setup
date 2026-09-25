@@ -13,7 +13,7 @@ Este workspace reúne cuatro aplicaciones independientes:
 ./setup.sh
 ```
 
-El script clona los repositorios que falten e instala las dependencias en cada aplicación. No hay `package.json` en la raíz.
+El script clona los repositorios que falten e instala las dependencias en cada aplicación.
 
 ## Ejecutar una aplicación
 

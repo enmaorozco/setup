@@ -2,23 +2,26 @@
   "folders": [
     {
       "name": "portal-academico",
-      "path": "app",
+      "path": "portal-academico",
+    },
+    {
+      "name": "inventario-ventas",
+      "path": "inventario-ventas",
+    },
+    {
+      "name": "licencias-municipales",
+      "path": "licencias-municipales",
+    },
+    {
+      "name": "doctor-orientador",
+      "path": "doctor-orientador",
     },
     {
       "name": "setup",
       "path": ".",
     },
   ],
-  "settings": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2,
-    "files.exclude": {
-      "**/.git": true,
-      "**/.DS_Store": true,
-    },
-    "typescript.tsdk": "app/node_modules/typescript/lib",
-  },
+  "settings": {},
   "extensions": {
     "recommendations": [
       "dbaeumer.vscode-eslint",

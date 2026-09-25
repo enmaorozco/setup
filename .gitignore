@@ -1,8 +1,8 @@
-# Dependencies
-node_modules/
-
 # Sub-repositories
-app/
+portal-academico/
+inventario-ventas/
+licencias-municipales/
+doctor-orientador/
 
 # Environment and secrets
 .env*

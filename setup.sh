@@ -5,29 +5,29 @@ echo "=================================================="
 echo "  Iniciando configuración inicial del espacio setup"
 echo "=================================================="
 
-# 1. Repositorio: app (Portal Académico)
-if [ ! -d "app/.git" ]; then
-  if [ -d "app" ] && [ -f "app/package.json" ]; then
-    echo "Carpeta 'app' detectada localmente."
-  else
-    echo "Clonando repositorio app (portal-academico)..."
-    git clone https://github.com/enmaorozco/portal-academico.git app
+cd "$(dirname "$0")"
+
+setup_repo() {
+  local name="$1"
+  local url="$2"
+
+  if [ ! -d "$name/.git" ]; then
+    if [ -e "$name" ]; then
+      echo "Error: '$name' existe, pero no es un repositorio Git." >&2
+      return 1
+    fi
+    echo "Clonando $name..."
+    git clone "$url" "$name"
   fi
-else
-  echo "Repositorio 'app' ya configurado y versionado."
-fi
 
-# 2. Espacio para clonar futuros repositorios adicionales:
-# if [ ! -d "servicio-auth/.git" ]; then
-#   echo "Clonando servicio-auth..."
-#   git clone https://github.com/enmaorozco/servicio-auth.git servicio-auth
-# fi
+  echo "Instalando dependencias de $name..."
+  (cd "$name" && npm install)
+}
 
-# 3. Instalación de dependencias
-if [ -d "app" ]; then
-  echo "Instalando dependencias de app..."
-  (cd app && npm install)
-fi
+setup_repo portal-academico https://github.com/enmaorozco/portal-academico.git
+setup_repo inventario-ventas https://github.com/enmaorozco/inventario-ventas.git
+setup_repo licencias-municipales https://github.com/enmaorozco/licencias-municipales.git
+setup_repo doctor-orientador https://github.com/enmaorozco/doctor-orientador.git
 
 echo "=================================================="
 echo "✓ Espacio de trabajo setup configurado con éxito!"
